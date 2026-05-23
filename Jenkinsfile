@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         SCANNER_HOME = tool 'sonar-scanner'
-        IMAGE_NAME = 'YOUR_DOCKERHUB_USERNAME/calculator-app'
+        IMAGE_NAME = 'kalpesh23/calculator-app'
     }
 
     stages {
@@ -48,7 +48,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $IMAGE_NAME = 'kalpesh23/calculator-app1' .'
+                sh 'docker build -t $IMAGE_NAME .'
             }
         }
 
@@ -63,7 +63,7 @@ pipeline {
                     sh '''
                     echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
 
-                    docker push $IMAGE_NAME = 'kalpesh23/calculator-app1'
+                    docker push $IMAGE_NAME
                     '''
                 }
             }
