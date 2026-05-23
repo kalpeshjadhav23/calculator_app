@@ -23,6 +23,16 @@ public class Calculator {
 		return (double) a / b;
 	}
 
+	// Intentionally added for SonarQube Quality Gate failure demo
+	public void badCode() {
+
+		String name = "Kalpesh";
+
+		if (name != null) {
+			System.out.println("Bad Practice");
+		}
+	}
+
 	public static void main(String[] args) {
 
 		Calculator calculator = new Calculator();
@@ -38,15 +48,5 @@ public class Calculator {
 
 		System.out.println("Division: "
 				+ calculator.divide(10, 5));
-		public void badCode() {
-
-			int a = 10;
-			int b = 20;
-			int c = 30;
-			int d = 40;
-			int e = 50;
-
-			System.out.println(a + b + c + d + e);
-		}
 	}
 }
