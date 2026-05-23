@@ -23,16 +23,6 @@ public class Calculator {
 		return (double) a / b;
 	}
 
-	// Intentionally added for SonarQube Quality Gate failure demo
-	public void badCode() {
-
-		String name = "Kalpesh";
-
-		if (name != null) {
-			System.out.println("Bad Practice");
-		}
-	}
-
 	public static void main(String[] args) {
 
 		Calculator calculator = new Calculator();
