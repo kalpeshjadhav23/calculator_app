@@ -28,12 +28,12 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonar') {
-                    sh '''
-                    mvn sonar:sonar \
-                    -Dsonar.projectKey=calculator_app \
-                    -Dsonar.host.url=http://13.203.105.74:9000
-                    -Dsonar.login=squ_3257098109c1b8a7d4d4c9f9d636477d08ce56c2
-                    '''
+                     sh '''
+                               mvn clean verify sonar:sonar \
+                               -Dsonar.projectKey=calculator_app \
+                               -D sonar.host.url=http://13.203.105.74:9000 \
+                               -Dsonar.login=squ_3257098109c1b8a7d4d4c9f9d636477d08ce56c2
+                               '''
                 }
             }
         }
